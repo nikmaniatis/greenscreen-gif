@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head><title>Confused John Travolta gif</title>
+
+<!-- <script data-main="scripts/main" src="libraries/require.js"></script> -->
+	<script src="libraries/seriously.js"></script>
+	<script src="libraries/seriously.chroma.js"></script>
+
+<style>
+	canvas {
+		background-image: url("img/site.jpg");
+	},
+	video-js {
+		visibility: hidden;
+	}
+</style>
+</head>
+<body>
+
+
+	<!-- page content goes here -->
+	<!--
+	This example loads the colorbars image as dataURI instead of from an external file
+	so it works when loaded from the file system (file://).
+	-->
+	<video class="video-js" width="427" height="320" autoplay loop id="gif">
+				<source src="img/greenscreen.mp4" type="video/mp4" />
+				<!-- <source src="img/greenscreen.webm" type="video/webm" /> -->
+			</video>
+
+	<!-- <img src="/img/greenscreen.gif" id="colorbars"/> -->
+
+	<canvas id="canvas" width="427" height="320">
+	   <!-- <img src='img/site.jpg'> -->
+	</canvas>
+
+	
+	<!-- <div>
+		<input type="range" id="vignette-range" min="0" max="20" step="0.0001" value="1"/>
+	</div> -->
+
+
+
+	<script>
+	(function() {
+		//main code goes here
+
+		// declare our variables
+		var seriously, // the main object that holds the entire composition
+			colorbars, // a wrapper object for our source image
+			chroma, // a vignette effect
+			target; // a wrapper object for our target canvas
+
+		seriously = new Seriously();
+		meme = seriously.source('#gif');
+		target = seriously.target('#canvas');
+		chroma = seriously.effect('chroma');
+
+		// vignette.amount = '#vignette-range';
+
+		// connect all our nodes in the right order
+		chroma.source = meme;
+		target.source = chroma;
+		seriously.go();
+
+	}());
+	</script>
+</body>
+</html>
