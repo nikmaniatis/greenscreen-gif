@@ -1,3 +1,9 @@
+
+
+
+document.getElementById("canvas").style.backgroundImage = "url('img/site.jpg')";
+
+
 (function() {
 		//main code goes here
 
