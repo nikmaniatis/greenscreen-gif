@@ -1,0 +1,22 @@
+body {
+	background-color: grey;
+}
+.active a{
+	color: green;
+}
+
+.gif-template {
+	padding: 40px 15px;
+	text-align: center;
+	
+}
+.gifs {
+	text-align: center;
+	
+}
+
+.input {
+		text-align: center;
+		/*width: 14px;*/
+
+}
