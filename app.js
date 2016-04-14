@@ -1,8 +1,35 @@
 
+// Define default background image
+var defaultimg = "url('img/site.jpg')"; 
+document.getElementById("canvas").style.backgroundImage = defaultimg;
+var backview = document.getElementById("canvas").style.backgroundImage;
 
 
-document.getElementById("canvas").style.backgroundImage = "url('img/site.jpg')";
 
+// define input url
+var imgUrl = document.getElementById('addimg');
+// add a listener
+imgUrl.addEventListener("input", imgload);
+
+//So every time a user types a url the img loading fuction starts
+function imgload() {
+	//to record the input value
+	var userUrl = imgUrl.value;
+	//if there is input 
+	if (userUrl.length>0){
+	// constract the backgroundImage css value of the new image link
+	var userLink = 'url('+"'"+userUrl+"'"+')';
+	// at the end we take a reusable backgroundImage css value
+	document.getElementById("canvas").style.backgroundImage = userLink;
+} else {
+	//if the input field is empty reload the default image
+	document.getElementById("canvas").style.backgroundImage = defaultimg;
+  }
+	console.log(userUrl.length);
+}
+
+
+//Gif generation Seriously.js function
 
 (function() {
 		//main code goes here
@@ -25,3 +52,6 @@ document.getElementById("canvas").style.backgroundImage = "url('img/site.jpg')";
 		seriously.go();
 
 	}());
+
+
+
