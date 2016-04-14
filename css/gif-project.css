@@ -1,9 +1,14 @@
 body {
-	background-color: grey;
+	background-color: #eee;
 }
 .active a{
 	color: green;
 }
+
+.canvas {
+	background-size: 446px 360px;
+}
+
 
 .gif-template {
 	padding: 40px 15px;
@@ -25,3 +30,4 @@ body {
 		text-align: center;
 
 }
+
