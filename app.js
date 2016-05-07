@@ -1,6 +1,6 @@
 
 // Define default background image
-var defaultimg = "url('img/site.jpg')"; 
+var defaultimg = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Palmyra_-_Decumanus_Maximus.jpg/515px-Palmyra_-_Decumanus_Maximus.jpg')"; 
 document.getElementById("canvas").style.backgroundImage = defaultimg;
 var backview = document.getElementById("canvas").style.backgroundImage;
 
@@ -15,7 +15,7 @@ imgUrl.addEventListener("input", imgload);
 function imgload() {
 	//to record the input value
 	var userUrl = imgUrl.value;
-	//if there is input 
+	//if there is input
 	if (userUrl.length>0){
 	// constract the backgroundImage css value of the new image link
 	var userLink = 'url('+"'"+userUrl+"'"+')';
@@ -52,6 +52,3 @@ function imgload() {
 		seriously.go();
 
 	}());
-
-
-
